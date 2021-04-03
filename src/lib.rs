@@ -55,8 +55,7 @@ impl SimpleExpression {
                     | (Ok(f), Ok(a))
                     | (Ok(f), Err(a))
                     | (Err(f), Ok(a)) => Ok(SimpleExpression::Apply(Box::new(f), Box::new(a))),
-                    (Err(f), Err(SimpleExpression::Variable(name))) => Err(SimpleExpression::Apply(Box::new(f), Box::new(SimpleExpression::Variable(name)))),
-                    (Err(SimpleExpression::Lambda(name, body)), Err(a)) => {
+                    (Err(SimpleExpression::Lambda(name, body)), Err(a @ SimpleExpression::Lambda(_, _))) => {
                         let buffer = variables.insert(name.clone(), a);
                         let ret = match (*body).reduction_first(variables) {
                             Ok(b) => b,
