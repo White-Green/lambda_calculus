@@ -19,6 +19,15 @@ fn main() {
     process_line(&engine, &mut variables, ":fst=/p.p tru");
     process_line(&engine, &mut variables, ":snd=/p.p fls");
     process_line(&engine, &mut variables, ":0=/s./z.z");
+    process_line(&engine, &mut variables, ":1=/s./z.s z");
+    process_line(&engine, &mut variables, ":2=/s./z.s(s z)");
+    process_line(&engine, &mut variables, ":3=/s./z.s(s(s z))");
+    process_line(&engine, &mut variables, ":4=/s./z.s(s(s(s z)))");
+    process_line(&engine, &mut variables, ":5=/s./z.s(s(s(s(s z))))");
+    process_line(&engine, &mut variables, ":6=/s./z.s(s(s(s(s(s z)))))");
+    process_line(&engine, &mut variables, ":7=/s./z.s(s(s(s(s(s(s z))))))");
+    process_line(&engine, &mut variables, ":8=/s./z.s(s(s(s(s(s(s(s z)))))))");
+    process_line(&engine, &mut variables, ":9=/s./z.s(s(s(s(s(s(s(s(s z))))))))");
     process_line(&engine, &mut variables, ":scc=/n./s./z.s(n s z)");
     process_line(&engine, &mut variables, ":iszero=/m.m(/x.fls)tru");
     process_line(&engine, &mut variables, ":id=/x.x");
