@@ -29,8 +29,11 @@ fn main() {
     process_line(&engine, &mut variables, ":8=/s./z.s(s(s(s(s(s(s(s z)))))))");
     process_line(&engine, &mut variables, ":9=/s./z.s(s(s(s(s(s(s(s(s z))))))))");
     process_line(&engine, &mut variables, ":scc=/n./s./z.s(n s z)");
+    process_line(&engine, &mut variables, ":plus=/m./n./s./z.m s(n s z)");
+    process_line(&engine, &mut variables, ":times=/m./n.m(plus n)0");
     process_line(&engine, &mut variables, ":iszero=/m.m(/x.fls)tru");
     process_line(&engine, &mut variables, ":id=/x.x");
+    process_line(&engine, &mut variables, ":prd=/m.fst(m (/p.pair(snd p)(scc(snd p)))(pair 0 0))");
     loop {
         let mut s = String::new();
         stdin().read_line(&mut s).expect("failed to read input");
